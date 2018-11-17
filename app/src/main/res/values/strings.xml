@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Plants</string>
+    <string name="addnew">Добавить</string>
+    <string name="textview">Имя</string>
+</resources>
