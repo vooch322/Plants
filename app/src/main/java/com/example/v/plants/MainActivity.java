@@ -2,6 +2,7 @@ package com.example.v.plants;
 
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,16 +21,22 @@ public class MainActivity extends AppCompatActivity {
     private TextView name;
     private TextView last;
     private TextView next;
-    RecyclerView mPlantRecyclerView;
-    RecyclerView.Adapter mPlantRecyclerViewAdapter;
-    List<Ficus> plantArray;
+
+    private FloatingActionButton mNewPlant;
+    private RecyclerView mPlantRecyclerView;
+    private RecyclerView.Adapter mPlantRecyclerViewAdapter;
+    private List<Ficus> plantArray;
 
 
     Ficus f=new Ficus("Игорь",new Date(2018,5,19),new Date(2018,5,19));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_main);
+        mNewPlant=(FloatingActionButton)findViewById(R.id.new_plant);
         //Ficus f=new Ficus("Игорь",new Date(2018,5,19),new Date(2018,5,19));
         SimpleDateFormat form=new SimpleDateFormat("dd.MM.yyyy");
         name=(TextView)findViewById(R.id.Name);
@@ -55,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
         mPlantRecyclerView.setLayoutManager(linearLayoutManager);
         mPlantRecyclerViewAdapter=new PlantRecyclerViewAdapter(plantArray);
         mPlantRecyclerView.setAdapter(mPlantRecyclerViewAdapter);
+
+        mNewPlant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              New(v);
+            }
+        });
     }
     public void Watter(View view){
         //Ficus f=new Ficus("Игорь",new Date(2018,5,19),new Date(2018,5,19));
