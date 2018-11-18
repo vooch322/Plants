@@ -74,10 +74,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void createPlantArray(){
         plantArray=new ArrayList<>();
-        plantArray.add(new Ficus("MMMM",new Date(),new Date()));
+        for(int i=0;i<34;i++){
+            plantArray.add(new Ficus("Растение"+i,new Date(),new Date()));
+        }
+
+        /*plantArray.add(new Ficus("MMMM",new Date(),new Date()));
         plantArray.add(new Ficus("MM2",new Date(),new Date()));
         plantArray.add(new Ficus("MM3",new Date(),new Date()));
         plantArray.add(new Ficus("MM4",new Date(),new Date()));
-        plantArray.add(new Ficus("MM5",new Date(),new Date()));
+        plantArray.add(new Ficus("MM5",new Date(),new Date()));*/
     }
 }

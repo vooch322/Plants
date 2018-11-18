@@ -1,6 +1,7 @@
 package com.example.v.plants.adapter;
 
 import android.support.annotation.NonNull;
+import android.support.design.card.MaterialCardView;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,7 +18,8 @@ import java.util.List;
 
 public class PlantRecyclerViewAdapter extends RecyclerView.Adapter<PlantRecyclerViewAdapter.PlantViewHolder> {
     public static class PlantViewHolder extends RecyclerView.ViewHolder{
-        CardView plantCardView;
+        MaterialCardView plantCardView;
+        //CardView plantCardView;
         ImageView plantImageView;
         TextView plantName;
         TextView plantLast;
